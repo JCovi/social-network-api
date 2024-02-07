@@ -37,23 +37,24 @@ const seedDatabase = async () => {
     let newUsers = [];
 
     for (let i = 0; i < arrayLength; i++) {
-      let randomFirstName = getRandomNumber(0, userList.length);
-      let randomLastName = getRandomNumber(0, userList.length);
-      let firstName = userList[randomFirstName];
-      let lastName = userList[randomLastName];
-      let userName = `${lastName}, ${firstName}`;
-      let emailAddress = `${lastName.toLowerCase()}_${firstName.toLowerCase()}@example.com`;
-
-      let newUser = {
-        _id: new mongoose.Types.ObjectId(),
-        username: userName,
-        email: emailAddress,
-        thoughts: [],
-        friends: [],
-      }
-
-      newUsers.push(newUser);
-    }
+        let randomFirstNameIndex = getRandomNumber(0, userList.length);
+        let randomLastNameIndex = getRandomNumber(0, userList.length);
+        let firstName = userList[randomFirstNameIndex];
+        let lastName = userList[randomLastNameIndex];
+        let userName = `${lastName}, ${firstName}`;
+       
+        let emailAddress = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@example.com`;
+    
+        let newUser = {
+            _id: new mongoose.Types.ObjectId(),
+            username: userName,
+            email: emailAddress,
+            thoughts: [],
+            friends: [],
+        };
+    
+        newUsers.push(newUser);
+    }    
 
     const thoughtList = [
       "I'm not afraid of John Wick.",
