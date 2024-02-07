@@ -43,7 +43,7 @@ const seedDatabase = async () => {
         let lastName = userList[randomLastNameIndex];
         let userName = `${lastName}, ${firstName}`;
        
-        let emailAddress = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@example.com`;
+        let emailAddress = `${firstName.toLowerCase()}${lastName.toLowerCase()}@example.com`;
     
         let newUser = {
             _id: new mongoose.Types.ObjectId(),
