@@ -35,17 +35,17 @@ addThought(req, res) {
             { new: true }
         );
     })
-    .then((dbUserData) => {
-        if (!dbUserData) {
-            return res
-            .status(404)
-            .json({ message: "Thought created but no user with this id!" });
-        }
-        res.json({ message: "Thought successfully created!" });
-    })
-    .catch((err) => {
-        res.status(500).json(err);
-    });
+//     .then((dbUserData) => {
+//         if (!dbUserData) {
+//             return res
+//             .status(404)
+//             .json({ message: "Thought created but no user with this id!" });
+//         }
+//         res.json({ message: "Thought successfully created!" });
+//     })
+//     .catch((err) => {
+//         res.status(500).json(err);
+//     });
 },
 
 updateThought({ params, body }, res) {
